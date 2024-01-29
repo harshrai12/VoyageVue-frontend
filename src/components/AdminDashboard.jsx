@@ -11,7 +11,7 @@ function AdminDashboard() {
     if (token) {
       setLoading(true);
 
-      fetch('https://zealous-sunglasses-slug.cyclic.app/dashboard', {
+      fetch('https://zealous-sunglasses-slug.cyclic.app/admin/dashboard', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
