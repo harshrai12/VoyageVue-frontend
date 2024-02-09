@@ -2,7 +2,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectBookmarks } from '../../Redux/bookmarksSlice';
-import DiaryCard from './Diaries/DiaryCard';
+import DiaryCard from './Diaries/Diarycard.jsx';
 import UserNavbar from './UserNavbar';
 
 const SavedDiaries = () => {
