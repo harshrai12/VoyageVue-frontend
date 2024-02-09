@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import DiaryCard from './DiaryCard';
+import DiaryCard from './Diarycard.jsx';
 
 
 function DiaryList() {
