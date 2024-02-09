@@ -1,8 +1,22 @@
 import React, { useState } from 'react';
 import { FaMapMarkerAlt, FaBookmark } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
+import { addBookmark, removeBookmark, selectBookmarks } from '../../../Redux/bookmarksSlice';
 
 const DiaryCard = ({ postData }) => {
   const [expanded, setExpanded] = useState(false);
+  const dispatch = useDispatch();
+  const bookmarks = useSelector(selectBookmarks);
+
+  const isBookmarked = bookmarks.includes(postData);
+
+  const handleBookmarkClick = () => {
+    if (isBookmarked) {
+      dispatch(removeBookmark(postData));
+    } else {
+      dispatch(addBookmark(postData));
+    }
+  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -16,7 +30,7 @@ const DiaryCard = ({ postData }) => {
   const userFullName = postData?.user?.Fullname || 'Unknown User';
 
   return (
-    <div className="w-80 mx-10 max-w-md  bg-white rounded-lg overflow-hidden shadow-lg">
+    <div className="w-80 mx-10 max-w-md bg-white rounded-lg overflow-hidden shadow-lg">
       <div className="h-48 overflow-hidden">
         <img
           className="object-cover w-full h-full"
@@ -37,8 +51,8 @@ const DiaryCard = ({ postData }) => {
               <p className="text-xs text-gray-500">{formatDate(postData.date)}</p>
             </div>
           </div>
-          <button className="text-gray-700 hover:text-gray-900">
-            <FaBookmark />
+          <button onClick={handleBookmarkClick} className="text-gray-400 hover:text-gray-900">
+            <FaBookmark color={isBookmarked ? 'black' : 'grey'} />
           </button>
         </div>
         <h2 className="text-lg font-bold text-gray-800 mb-2">{postData.title}</h2>
@@ -64,6 +78,7 @@ const DiaryCard = ({ postData }) => {
 };
 
 export default DiaryCard;
+
 
 
 

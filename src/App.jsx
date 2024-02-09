@@ -12,7 +12,8 @@ import Testimony from './components/Testimony';
 import TripCatalog from './components/TripCatalog';
 import TripData from "./components/trip.json"
 import AdminLogin from './components/AdminLogin';
-
+import Checkoutpage from './components/Checkoutpage.jsx';
+import SavedDiaries from './components/SavedDiaries.jsx';
 
 
 function App() {
@@ -34,10 +35,12 @@ function App() {
           user?(<>
             <Route path='/home' element={<Home/>}/>
           <Route path='/users' element={<UserList/>}/>
+          <Route path='/Saved' element={<SavedDiaries/>}/>
           <Route path='/profile' element={<UserProfile/>}/>
           <Route path='/book' element={<TripCatalog trips={TripData}/>}/>
           <Route path='/admin/login' element={<AdminLogin/>}/>
           <Route path='/admin/dashboard' element={<AdminDashboard/>}/>
+          <Route path='/Checkoutpage' element={<Checkoutpage/>}/>
           
           </>
           ):(<>

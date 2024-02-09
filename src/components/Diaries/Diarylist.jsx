@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import DiaryCard from './Diarycard.jsx';
+import DiaryCard from './DiaryCard';
+
 
 function DiaryList() {
   const [diaryPosts, setDiaryPosts] = useState([]);
