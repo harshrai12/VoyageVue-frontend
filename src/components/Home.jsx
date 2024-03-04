@@ -1,19 +1,22 @@
-import React from 'react'
-import UserNavbar from './UserNavbar'
-import Diarylist from './Diaries/Diarylist'
-import RecentActivity from './RecentActivity'
+import React from 'react';
+import UserNavbar from './UserNavbar';
+import Diarylist from './Diaries/Diarylist';
+import RecentActivity from './RecentActivity';
 
 function Home() {
+  const gradientBackground = {
+    backgroundImage: 'linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%)',
+    minHeight: '300vh', // Set a minimum height to cover the viewport
+  };
+
   return (
-    <div 
-    style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1651309259727-99b5f13f3a1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
-             height:"1000px"}}>
-      
-      <UserNavbar />
-      <RecentActivity/>
-      <Diarylist/>
+    <div style={gradientBackground}>
+      <UserNavbar color='light' />
+      <RecentActivity />
+      <Diarylist />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
+

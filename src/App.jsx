@@ -41,20 +41,14 @@ function App() {
           <Route path='/admin/login' element={<AdminLogin/>}/>
           <Route path='/admin/dashboard' element={<AdminDashboard/>}/>
           <Route path='/Checkoutpage' element={<Checkoutpage/>}/>
-          
           </>
           ):(<>
             <Route path='/home' element={<div><h1>please register</h1></div>}/>
             <Route path='/users' element={<UserList/>}/>
             <Route path='/profile' element={<div><h1>please register</h1></div>}/>
             <Route path='/book' element={<TripCatalog trips={TripData}/>}/>
-           
             </>)
-
         }
-      
-
-     
       </Routes>
       </BrowserRouter>
     
